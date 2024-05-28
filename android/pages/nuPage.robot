@@ -14,14 +14,23 @@ ${BTN_INVITE_FRIENDS}           xpath=//android.widget.ScrollView/android.widget
 ${BTN_INFOS}                    xpath=//android.widget.ScrollView/android.widget.Button[2]
 ${CAMPO_SALDO}                  xpath=//android.view.View[contains(@content-desc,"Conta")]    
 ${BTN_PIX}                      xpath=//android.widget.ScrollView/android.widget.HorizontalScrollView[1]/android.widget.Button[1]
+${TEXT_PIX}                     xpath=//android.view.View[@content-desc="Pix"]
 ${BTN_PAGAR}                    xpath=//android.widget.ScrollView/android.widget.HorizontalScrollView[1]/android.widget.Button[2]
+${TEXT_PAGAR}                   xpath=//android.view.View[@content-desc="Pagar"]
 ${BTN_TRANSFERIR}               xpath=//android.widget.ScrollView/android.widget.HorizontalScrollView[1]/android.widget.Button[3]
+${TEXT_TRANSFERIR}              xpath=//android.view.View[@content-desc="Transferir"]
 ${BTN_DEPOSITAR}                xpath=//android.widget.ScrollView/android.widget.HorizontalScrollView[1]/android.widget.Button[4]
+${TEXT_DEPOSITAR}               xpath=//android.view.View[@content-desc="Depositar"]
 ${BTN_EMPRESTIMO}               xpath=//android.widget.ScrollView/android.widget.HorizontalScrollView[1]/android.widget.Button[5]
+${TEXT_EMPRESTIMO}              xpath=//android.view.View[@content-desc="Empréstimos"]
 ${BTN_RECARGA}                  xpath=//android.widget.ScrollView/android.widget.HorizontalScrollView[1]/android.widget.Button[4]
+${TEXT_RECARGA}                 xpath=//android.view.View[@content-desc="Recarga de celular"]
 ${BTN_COBRAR}                   xpath=//android.widget.ScrollView/android.widget.HorizontalScrollView[1]/android.widget.Button[5]
+${TEXT_COBRAR}                  xpath=//android.view.View[@content-desc="Cobrar"]
 ${BTN_DOAR}                     xpath=//android.widget.ScrollView/android.widget.HorizontalScrollView[1]/android.widget.Button[4]
+${TEXT_DOAR}                    xpath=//android.view.View[@content-desc="Doação"]
 ${BTN_ATALHOS}                  xpath=//android.widget.ScrollView/android.widget.HorizontalScrollView[1]/android.widget.Button[5]
+${TEXT_ATALHOS}                 xpath=//android.view.View[@content-desc="Doação"]
 ${BTN_MEUS_CARTOES}             xpath=//android.view.View[@content-desc="Meus cartões"]
 ${TEXT_EMPRESTIMO}              xpath=//android.view.View[contains(@content-desc,"Você tem R$ 10.000,00 disponíveis para empréstimo.")]
 ${TEXT_PLANOS}                  xpath=//android.view.View[contains(@content-desc,"Conquiste planos futuros")]
@@ -124,46 +133,130 @@ ${INPUT_VALOR_DOAR}                   xpath=//android.widget.EditText[@text="R$ 
 Dado que o cliente está na página inicial
     Wait Until Element Is Visible    ${PAGINA_INICIAL}
 
-Então ele pode visualizar as informações da tela inicial
+Então ele pode visualizar a foto do seu perfil no canto superior esquerdo
     Espera o elemento e visualiza o conteúdo     ${USER_FOTO}
-    Espera o elemento e visualiza o conteúdo     ${EYE_WIDGET}
-    Espera o elemento e visualiza o conteúdo     ${BTN_INFOS}
-    Espera o elemento e visualiza o conteúdo     ${BTN_INVITE_FRIENDS} 
+
+Então ele pode visualizar a mensagem com seu nome
     Espera o elemento e verifica conteúdo        ${USERNAME}                'Olá, Breno Freitas'
-    Espera o elemento e verifica conteúdo        ${CAMPO_SALDO}               'Conta R$ 181,79'
+
+Então ele pode visualizar o botão com ícone de olho
+    Espera o elemento e visualiza o conteúdo     ${EYE_WIDGET}
+    Espera o elemento e espera que ele esteja habilitado    ${EYE_WIDGET}  
+
+Então ele pode visualizar o botão com ícone de interrogação
+    Espera o elemento e visualiza o conteúdo     ${BTN_INFOS}
+    Espera o elemento e espera que ele esteja habilitado    ${BTN_INFOS} 
+
+Então ele pode visualizar o botão com ícone de cartão
+    Espera o elemento e visualiza o conteúdo     ${BTN_INVITE_FRIENDS} 
+    Espera o elemento e espera que ele esteja habilitado    ${BTN_INVITE_FRIENDS} 
+
+Então ele pode visualizar o campo conta com o saldo
+    Espera o elemento e verifica conteúdo        ${CAMPO_SALDO}             'Conta R$ 181,79'
+
+Então ele pode visualizar a funcionalidade de Pix
     Espera o elemento e verifica conteúdo        ${BTN_PIX}                 'Pix'
+    Espera o elemento e espera que ele esteja habilitado    ${BTN_PIX} 
+
+Então ele pode visualizar a funcionalidade de Pagar
     Espera o elemento e verifica conteúdo        ${BTN_PAGAR}               'Pagar'
+    Espera o elemento e espera que ele esteja habilitado    ${BTN_PAGAR}
+
+Então ele pode visualizar a funcionalidade de Transferir
     Espera o elemento e verifica conteúdo        ${BTN_TRANSFERIR}          'Transferir'
+    Espera o elemento e espera que ele esteja habilitado    ${BTN_TRANSFERIR}
+
+Então ele pode visualizar a funcionalidade de Depositar
     Espera o elemento e verifica conteúdo        ${BTN_DEPOSITAR}           'Depositar'
+    Espera o elemento e espera que ele esteja habilitado    ${BTN_DEPOSITAR}
+
+Então ele pode visualizar a funcionalidade de Empréstimos
     Espera o elemento e verifica conteúdo        ${BTN_EMPRESTIMO}          'Empréstimos'
-    Espera o elemento e verifica conteúdo        ${BTN_MEUS_CARTOES}        'Meus cartões'
-    Espera o elemento e verifica conteúdo        ${TEXT_EMPRESTIMO}         'Você tem R$ 10.000,00 disponíveis para empréstimo.'
-    Espera o elemento e verifica conteúdo        ${CAMPO_CARTAO_CREDITO}    'Cartão de Crédito Fatura atual R$ 780,72 Limite disponível R$ 806,78'
+    Espera o elemento e espera que ele esteja habilitado    ${BTN_EMPRESTIMO}
 
-E pode rolar o carrossel para o lado para visualizar as funcionalidades restantes
+E ele rola o carrossel principal para o lado para visualizar as funcionalidades restantes
     Swipe By Percent    60    50    -40    50    1500
-    Espera o elemento e verifica conteúdo        ${BTN_RECARGA}             'Recarga de celular'
-    Espera o elemento e verifica conteúdo        ${BTN_COBRAR}              'Cobrar'
-    Espera o elemento e verifica conteúdo        ${BTN_DOAR}                'Doação'
-    Espera o elemento e verifica conteúdo        ${BTN_ATALHOS}             'Encontrar atalhos'
-    Swipe By Percent    60    70    -40    70    1500
-    Espera o elemento e verifica conteúdo        ${TEXT_PLANOS}             'Conquiste planos futuros: conheça as opções para guardar dinheiro.'
 
-E pode rolar a tela para baixo para visualizar as funcionalidades restantes
+Então ele pode visualizar a funcionalidade de Recarga de celular
+    Espera o elemento e verifica conteúdo        ${BTN_RECARGA}             'Recarga de celular'
+    Espera o elemento e espera que ele esteja habilitado    ${BTN_RECARGA}
+
+Então ele pode visualizar a funcionalidade de Cobrar
+    Espera o elemento e verifica conteúdo        ${BTN_COBRAR}              'Cobrar'
+    Espera o elemento e espera que ele esteja habilitado    ${BTN_COBRAR}
+
+Então ele pode visualizar a funcionalidade de Doação
+    Espera o elemento e verifica conteúdo        ${BTN_DOAR}                'Doação'
+    Espera o elemento e espera que ele esteja habilitado    ${BTN_DOAR}
+
+Então ele pode visualizar a funcionalidade de Encontrar atalhos
+    Espera o elemento e verifica conteúdo        ${BTN_ATALHOS}             'Encontrar atalhos'
+    Espera o elemento e espera que ele esteja habilitado    ${BTN_ATALHOS}
+
+Então ele pode visualizar o campo Meus cartões
+    Espera o elemento e verifica conteúdo        ${BTN_MEUS_CARTOES}        'Meus cartões'
+    Espera o elemento e espera que ele esteja habilitado    ${BTN_MEUS_CARTOES}
+
+Então ele pode visualizar a label de empréstimo
+    Espera o elemento e verifica conteúdo        ${TEXT_EMPRESTIMO}         'Você tem R$ 10.000,00 disponíveis para empréstimo.'
+    Espera o elemento e espera que ele esteja habilitado    ${TEXT_EMPRESTIMO}
+
+E ele rola o carrossel abaixo da label Meus cartões para o lado
+    Swipe By Percent    60    70    -40    70    1500
+
+Então ele pode visualizar a label de planos futuros
+    Espera o elemento e verifica conteúdo        ${TEXT_PLANOS}             'Conquiste planos futuros: conheça as opções para guardar dinheiro.'
+    Espera o elemento e espera que ele esteja habilitado    ${TEXT_PLANOS}
+
+Então ele pode visualizar o campo de cartão de crédito
+    Espera o elemento e verifica conteúdo        ${CAMPO_CARTAO_CREDITO}    'Cartão de Crédito Fatura atual R$ 780,72 Limite disponível R$ 806,78'
+    Espera o elemento e espera que ele esteja habilitado    ${CAMPO_CARTAO_CREDITO}
+
+Quando ele navega para baixo
     Swipe By Percent    0    99    0    -10    1500
+
+Então ele pode visualizar o campo de empréstimo
     Espera o elemento e verifica conteúdo        ${CAMPO_EMPRESTIMO}                           'Empréstimo Valor disponível de até R$ 10.000,00'
+    Espera o elemento e espera que ele esteja habilitado    ${CAMPO_EMPRESTIMO}
+
+Então ele pode visualizar o campo de investimentos
     Espera o elemento e verifica conteúdo        ${CAMPO_INVESTIMENTO}                         'Investimentos A revolução roxa começou. Invista de maneira simples, sem burocracia e 100% digital.'
+    Espera o elemento e espera que ele esteja habilitado    ${CAMPO_INVESTIMENTO}
+
+
+Então ele pode visualizar o botão roxo Conhecer
     Espera o elemento e verifica conteúdo        ${BTN_CONHECER_INVESTIMENTO}                  'Conhecer'
+    Espera o elemento e espera que ele esteja habilitado    ${BTN_CONHECER_INVESTIMENTO}
+
+Então ele pode visualizar o campo de seguro de vida
     Espera o elemento e verifica conteúdo        ${CAMPO_SEGURO_VIDA}                          'Seguro de vida Conheça Nubank Vida: um seguro simples e que cabe no bolso.'
+    Espera o elemento e espera que ele esteja habilitado    ${CAMPO_SEGURO_VIDA}
+
+Então ele pode visualizar o título Descubra mais
     Espera o elemento e verifica conteúdo        ${LABEL_DESCUBRA_MAIS}                        'Descubra mais'
+
+Então ele pode visualizar o campo de WhatsApp
     Espera o elemento e verifica conteúdo        ${CAMPO_WPP}                                  'WhatsApp Novo Pagamentos seguros, rápidos e sem tarifa. A experiência Nubank sem nem sair da conversa.'
+    Espera o elemento e espera que ele esteja habilitado    ${CAMPO_WPP}
+
+Então ele pode visualizar o botão roxo Quero conhecer
     Espera o elemento e verifica conteúdo        ${BTN_QUERO_CONHECER_WPP}                     'Quero conhecer'
+    Espera o elemento e espera que ele esteja habilitado    ${BTN_QUERO_CONHECER_WPP}
+
+E navega pelo último carrossel
     Swipe By Percent    60    90    -40    90    1500
+
+Então ele pode visualizar o campo Indique seus amigos
     Espera o elemento e verifica conteúdo        ${CAMPO_INDICA_AMIGOS}                        'Indique seus amigos Mostre aos seus amigos como é fácil ter uma vida sem burocracia.'
+    Espera o elemento e espera que ele esteja habilitado    ${CAMPO_INDICA_AMIGOS}
+
+Então ele pode visualizar o botão roxo Indicar amigos
     Espera o elemento e verifica conteúdo        ${BTN_INDICAR_AMIGOS}                         'Indicar amigos'
+    Espera o elemento e espera que ele esteja habilitado    ${BTN_INDICAR_AMIGOS}
     
 Quando ele clica no olhinho no canto superior direito   
     Espera o elemento e clica nele               ${EYE_WIDGET}
+    Espera o elemento e espera que ele esteja habilitado    ${EYE_WIDGET}
 
 Então o saldo da conta e a fatura do cartão ficam invisíveis
     Wait Until Page Does Not Contain     ${CAMPO_SALDO}
@@ -316,7 +409,8 @@ Então ele pode visualizar as transferências realizadas
     Espera o elemento e verifica conteúdo    ${TRANSF3_FATURA}    'Transferência enviada Ontem BRENO FREITAS R$ 30,00 Pix'
 
 E ele arrasta a tela para baixo
-    Swipe By Percent    60    85    60    -5    3000
+    Wait Until Page Contains Element    ${VALOR_FATURA}
+    Swipe By Percent    60    85    60    -10    3000
 
 Quando ele arrasta a tela para baixo
     Swipe By Percent    0    99    0    40    1000
