@@ -38,3 +38,13 @@ Espera o elemento, verifica o conteúdo e clica nele
     Wait Until Element Is Visible      ${elemento}
     Element Should Be Visible          ${elemento}        ${texto}
     Click Element                      ${elemento}
+
+Espera o elemento e espera que ele esteja habilitado
+    [Arguments]    ${elemento}
+    Wait Until Element Is Visible    ${elemento}
+    Element Should Be Enabled        ${elemento}
+
+Espera o elemento e espera que esteja desabilitado
+    [Arguments]    ${elemento}
+    Wait Until Element Is Visible     ${elemento}
+    Element Should Be Disabled        ${elemento}

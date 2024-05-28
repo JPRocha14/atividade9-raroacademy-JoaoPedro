@@ -36,6 +36,12 @@ ${BTN_QUERO_CONHECER_WPP}       xpath=//android.view.View[@content-desc="Quero c
 ${CAMPO_INDICA_AMIGOS}          xpath=//android.view.View[contains(@content-desc,"Indique seus amigos")]
 ${BTN_INDICAR_AMIGOS}           xpath=//android.view.View[@content-desc="Indicar amigos"]
 
+# BOTÕES DEPOIS DE NAVEGAR O CARROSSEL
+${RECARGA_BTN_CARROSSEL}        xpath=//android.widget.ScrollView/android.widget.HorizontalScrollView[1]/android.widget.Button[2]
+${COBRAR_BTN_CARROSSEL}         xpath=//android.widget.ScrollView/android.widget.HorizontalScrollView[1]/android.widget.Button[3]
+${DOACAO_BTN_CARROSSEL}         xpath=//android.widget.ScrollView/android.widget.HorizontalScrollView[1]/android.widget.Button[4]
+${ATALHO_BTN_CARROSSEL}         xpath=//android.widget.ScrollView/android.widget.HorizontalScrollView[1]/android.widget.Button[5]
+
 # ÁREA SALDO DA CONTA
 ${LABEL_AREA_SALDO}                   xpath=//android.view.View[@content-desc="Saldo disponível"]
 ${SALDO_DISPONIVEL}                   xpath=//android.view.View[@content-desc="R$ 181,79"]
@@ -51,6 +57,29 @@ ${TRANSF1_SALDO}                      xpath=//android.view.View[contains(@conten
 ${TRANSF2_SALDO}                      xpath=//android.view.View[contains(@content-desc,"ANDRE JEY")]
 ${TRANSF3_SALDO}                      xpath=//android.view.View[contains(@content-desc,"ERIKO BARBOSA")]
 ${TRANSF4_SALDO}                      xpath=//android.view.View[contains(@content-desc,"IVAN COELHO")]
+
+# ÁREA CARTÃO DE CRÉDITO
+${TEXT_FATURA}                        xpath=//android.view.View[@content-desc="Fatura atual"]
+${VALOR_FATURA}                       xpath=//android.view.View[@content-desc="R$ 780,72"]
+${LIMITE_FATURA}                      xpath=//android.view.View[@content-desc="Limite disponível R$ 806,78"]
+${FEAT_PAGAR_FATURA}                  xpath=//android.view.View[@content-desc="Pagar fatura"]
+${FEAT_RESUMO_FATURA}                 xpath=//android.view.View[@content-desc="Resumo de faturas"]
+${FEAT_AJUSTE_FATURA}                 xpath=//android.view.View[@content-desc="Ajustar limites"]
+${FEAT_CARTAO_FATURA}                 xpath=//android.view.View[@content-desc="Cartão virtual"]
+${TRANSF1_FATURA}                     xpath=//android.view.View[contains(@content-desc,"Pagamento recebido")]
+${TRANSF2_FATURA}                     xpath=//android.view.View[contains(@content-desc,"Supermercado")]
+${TRANSF3_FATURA}                     xpath=//android.view.View[contains(@content-desc,"Transferência enviada")]
+
+# ÁREA INVESTIMENTOS
+${IMAGEM_INVEST}                      xpath=//android.widget.ImageView
+${TITULO_INVEST}                      xpath=//android.view.View[@content-desc="Invista sem taxas e burocracia!"]
+${PARAGRAFO1_INVEST}                  xpath=//android.view.View[contains(@content-desc,"Estamos convidando alguns clientes")]
+${PARAGRAFO2_INVEST}                  xpath=//android.view.View[contains(@content-desc,"Além de não pagar nada")]
+${BTN_INVEST}                         xpath=//android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.widget.Button
+
+# ÁREA INDICAR AMIGOS
+${TEXTS_AMIGOS}                       xpath=//android.widget.ImageView[contains(@content-desc,"Resgate seus amigos da fila do banco")]
+${BTN_AMIGOS}                         xpath=//android.widget.Button[@content-desc="INDICAR AMIGOS"]
 
 # ÁREA PIX
 ${MENSAGEM_PIX}                       xpath=//android.widget.ImageView[contains(@content-desc,"Minha área Pix")]
@@ -129,7 +158,7 @@ E pode rolar a tela para baixo para visualizar as funcionalidades restantes
     Espera o elemento e verifica conteúdo        ${LABEL_DESCUBRA_MAIS}                        'Descubra mais'
     Espera o elemento e verifica conteúdo        ${CAMPO_WPP}                                  'WhatsApp Novo Pagamentos seguros, rápidos e sem tarifa. A experiência Nubank sem nem sair da conversa.'
     Espera o elemento e verifica conteúdo        ${BTN_QUERO_CONHECER_WPP}                     'Quero conhecer'
-    Swipe By Percent    60    90    -40    90
+    Swipe By Percent    60    90    -40    90    1500
     Espera o elemento e verifica conteúdo        ${CAMPO_INDICA_AMIGOS}                        'Indique seus amigos Mostre aos seus amigos como é fácil ter uma vida sem burocracia.'
     Espera o elemento e verifica conteúdo        ${BTN_INDICAR_AMIGOS}                         'Indicar amigos'
     
@@ -224,4 +253,99 @@ Então ele consegue visualizar as funcionalidades pix
     Espera o elemento e clica nele                             ${BTN_COBRAR_PIX}
     Espera o elemento, verifica o conteúdo e clica nele        ${BTN_CHAVES_PIX}                     "Minhas chaves"         
     Espera o elemento, verifica o conteúdo e clica nele        ${BTN_LIMITE_PIX}                     "Meu limite Pix"           
-    Espera o elemento, verifica o conteúdo e clica nele        ${BTN_AJUDA_PIX}                      "Me ajuda"                                                   
+    Espera o elemento, verifica o conteúdo e clica nele        ${BTN_AJUDA_PIX}                      "Me ajuda"  
+
+Quando ele clica na opção de pagar
+    Espera o elemento e clica nele    ${BTN_PAGAR}            
+
+Quando ele clica na opção de transferir
+    Espera o elemento e clica nele    ${BTN_TRANSFERIR}   
+
+Quando ele clica na opção de depositar
+    Espera o elemento e clica nele    ${BTN_DEPOSITAR}
+
+Quando ele clica na opção de Empréstimos
+    Espera o elemento e clica nele    ${BTN_EMPRESTIMO}
+
+Quando ele navega pelo primeiro carrossel 
+    Swipe By Percent    60    50    -40    50    1500
+
+E clica na funcionalidade de recarga de celular
+    Espera o elemento e clica nele    ${RECARGA_BTN_CARROSSEL}
+
+Então ele pode inputar um número de celular
+    Espera o elemento e inputa um texto    ${INPUT_CEL_RECARGA}    '71982444444'
+
+E clica na opção de cobrar
+    Espera o elemento e clica nele    ${COBRAR_BTN_CARROSSEL}
+
+Então ele visualiza o botão de doação e ele está habilitado
+    Espera o elemento e visualiza o conteúdo                ${DOACAO_BTN_CARROSSEL}
+    Espera o elemento e espera que ele esteja habilitado    ${DOACAO_BTN_CARROSSEL}
+
+Quando ele clica na label de empréstimo no segundo carrossel
+    Espera o elemento e clica nele    ${TEXT_EMPRESTIMO} 
+
+Quando ele clica na área de cartão de crédito
+    Espera o elemento e clica nele    ${CAMPO_CARTAO_CREDITO}
+
+Então ele pode visualizar o texto "Fatura atual"
+    Espera o elemento e verifica conteúdo    ${TEXT_FATURA}    'Fatura atual'
+
+Então ele pode visualizar sua o valor da fatura atual
+    Espera o elemento e verifica conteúdo    ${VALOR_FATURA}    'R$ 780,72'
+
+Então ele pode visualizar sua o limite disponível
+    Espera o elemento e verifica conteúdo    ${LIMITE_FATURA}    'Limite disponível R$ 806,78'
+
+Então ele pode visualizar a funcionalidade de pagar fatura
+    Espera o elemento e verifica conteúdo    ${FEAT_PAGAR_FATURA}    'Pagar fatura'
+
+Então ele pode visualizar a funcionalidade de resumo de faturas
+    Espera o elemento e verifica conteúdo    ${FEAT_RESUMO_FATURA}    'Resumo de faturas'
+
+Então ele pode visualizar a funcionalidade de ajustar limites
+    Espera o elemento e verifica conteúdo    ${FEAT_AJUSTE_FATURA}    'Ajustar limites'
+
+Então ele pode visualizar a funcionalidade de cartão virtual
+    Espera o elemento e verifica conteúdo    ${FEAT_CARTAO_FATURA}    'Cartão virtual'
+
+Então ele pode visualizar as transferências realizadas
+    Espera o elemento e verifica conteúdo    ${TRANSF1_FATURA}    'Pagamento recebido Ontem VOCÊ PAGOU R$ 50,00 R$ 30,00 Pix'
+    Espera o elemento e verifica conteúdo    ${TRANSF2_FATURA}    'Supermercado Ontem BRENO FREITAS R$ 30,00 Pi '
+    Espera o elemento e verifica conteúdo    ${TRANSF3_FATURA}    'Transferência enviada Ontem BRENO FREITAS R$ 30,00 Pix'
+
+E ele arrasta a tela para baixo
+    Swipe By Percent    60    85    60    -5    1500
+
+Quando ele arrasta a tela para baixo
+    Swipe By Percent    0    99    0    40    1500
+
+E clica no campo de empréstimo
+    Espera o elemento e clica nele    ${CAMPO_EMPRESTIMO}
+
+E clica no botão para conhecer investimentos
+    Espera o elemento e clica nele    ${BTN_CONHECER_INVESTIMENTO}
+
+Então ele consegue visualizar as informações de investimento
+    Espera o elemento e visualiza o conteúdo              ${IMAGEM_INVEST}
+    Espera o elemento e verifica conteúdo                 ${TITULO_INVEST}    'Invista sem taxas e burocracia!'
+    Espera o elemento e verifica conteúdo                 ${PARAGRAFO1_INVEST}    'Estamos convidando alguns clientes do Nubank para serem os primeiros a fazer parte desta revolução roxa nos investimentos, e você é um deles!'
+    Espera o elemento e verifica conteúdo                 ${PARAGRAFO2_INVEST}    'Além de não pagar nada para abrir a conta, você terá taxa zero na corretagem de ações!'
+    Espera o elemento e espera que esteja desabilitado    ${BTN_INVEST}
+
+Quando ele clica no ícone de carta no canto superior direito
+    Espera o elemento e clica nele    ${BTN_INVITE_FRIENDS}
+
+Então ele pode visualizar as informações do campo de convite de amigos
+    Espera o elemento e verifica conteúdo                 ${TEXTS_AMIGOS}    'Resgate seus amigos da fila do banco Para cada indicação aceita, um amigo salvo da burocracia'
+    Espera o elemento e espera que esteja desabilitado    ${BTN_AMIGOS}
+
+E navega no último carrossel
+    Swipe By Percent    60    90    -40    90    1500
+
+Quando ele clica no campo de indicação de amigos
+    Espera o elemento e clica nele        ${CAMPO_INDICA_AMIGOS}
+
+Quando ele clica no botão roxo no campo de indique seus amigos
+    Espera o elemento e clica nele        ${BTN_INDICAR_AMIGOS}
