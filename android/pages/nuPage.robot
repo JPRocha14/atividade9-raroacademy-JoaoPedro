@@ -39,21 +39,21 @@ ${BTN_INDICAR_AMIGOS}           xpath=//android.view.View[@content-desc="Indicar
 # ÁREA SALDO DA CONTA
 ${LABEL_AREA_SALDO}                   xpath=//android.view.View[@content-desc="Saldo disponível"]
 ${SALDO_DISPONIVEL}                   xpath=//android.view.View[@content-desc="R$ 181,79"]
-${DINHEIRO_GUARDADO_SALDO}            xpath=//android.view.View[@content-desc="Dinheiro guardado R$ 240,02"]
-${RENDIMENTO_CONTA_SALDO}             xpath=//android.view.View[@content-desc="Rendimento total da conta +R$ 0,20 este mês"]
+${DINHEIRO_GUARDADO_SALDO}            xpath=//android.view.View[contains(@content-desc, "Dinheiro guardado")]
+${RENDIMENTO_CONTA_SALDO}             xpath=//android.view.View[contains(@content-desc,"Rendimento total da conta")]
 ${BTN_DEPOSITAR_SALDO}                xpath=//android.widget.HorizontalScrollView/android.widget.Button[1]
 ${BTN_PAGAR_SALDO}                    xpath=//android.widget.HorizontalScrollView/android.widget.Button[2]
 ${BTN_TRANSFERIR_SALDO}               xpath=//android.widget.HorizontalScrollView/android.widget.Button[3]
 ${BTN_EMPRESTIMO_SALDO}               xpath=//android.widget.HorizontalScrollView/android.widget.Button[4]
 ${BTN_COBRAR_SALDO}                   xpath=//android.widget.HorizontalScrollView/android.widget.Button[5]
 ${HISTORICO_SALDO}                    xpath=//android.view.View[@content-desc="Histórico"]
-${TRANSF1_SALDO}                      xpath=//android.view.View[@content-desc="Transferência enviada Ontem PATRICIA COSTA  R$ 30,00 Pix"]
-${TRANSF2_SALDO}                      xpath=//android.view.View[@content-desc="Transferência recebida Ontem ANDRE JEY R$ 30,00 Pix"]
-${TRANSF3_SALDO}                      xpath=//android.view.View[@content-desc="Transferência recebida Ontem ERIKO BARBOSA R$ 30,00 Pix"]
-${TRANSF4_SALDO}                      xpath=//android.view.View[@content-desc="Transferência recebida Ontem IVAN COELHO  R$ 30,00 Pix"]
+${TRANSF1_SALDO}                      xpath=//android.view.View[contains(@content-desc,"PATRICIA COSTA")]
+${TRANSF2_SALDO}                      xpath=//android.view.View[contains(@content-desc,"ANDRE JEY")]
+${TRANSF3_SALDO}                      xpath=//android.view.View[contains(@content-desc,"ERIKO BARBOSA")]
+${TRANSF4_SALDO}                      xpath=//android.view.View[contains(@content-desc,"IVAN COELHO")]
 
 # ÁREA PIX
-${MENSAGEM_PIX}                       xpath=//android.widget.ImageView[@content-desc="Minha área Pix Tudo o que você precisa para pagar, transferir ou cobrar. Pagar Transferir Cobrar"]
+${MENSAGEM_PIX}                       xpath=//android.widget.ImageView[contains(@content-desc,"Minha área Pix")]
 ${BTN_PAGAR_PIX}                      xpath=//android.widget.ImageView/android.widget.Button[2]
 ${BTN_TRANSFERIR_PIX}                 xpath=//android.widget.ImageView/android.widget.Button[3]
 ${BTN_COBRAR_PIX}                     xpath=//android.widget.ImageView/android.widget.Button[4]
@@ -62,21 +62,22 @@ ${BTN_LIMITE_PIX}                     xpath=//android.view.View[@content-desc="M
 ${BTN_AJUDA_PIX}                      xpath=//android.view.View[@content-desc="Me ajuda"]
 
 # ÁREA PAGAR
-${BTN_PIX_PAGAR}                      xpath=//android.view.View[@content-desc="Pagar com Pix Leia um QR Code ou cole o código."]
-${BTN_FATURA_PAGAR}                   xpath=//android.view.View[@content-desc="Pagar fatura do cartão Libera o limite do seu Cartão de Crédito."]
-${BTN_BOLETO_PAGAR}                   xpath=//android.view.View[@content-desc="Pagar um boleto Contas de luz, água, etc."]
+${BTN_PIX_PAGAR}                      xpath=//android.view.View[contains(@content-desc,"Pagar com Pix")]
+${BTN_FATURA_PAGAR}                   xpath=//android.view.View[contains(@content-desc,"Libera o limite do seu Cartão de Crédito.")]
+${BTN_BOLETO_PAGAR}                   xpath=//android.view.View[contains(@content-desc,"Pagar um boleto")]
 
 # ÁREA TRANSFERIR
+${INPUT_VALOR_TRANSFERIR}             xpath=//android.widget.EditText[@text="R$ 0,00"]
 
 # ÁREA DEPOSITAR
 ${MENSAGEM_DEPOSITO}                  xpath=//android.view.View[@content-desc="Como você quer depositar na sua conta do Nubank"]
-${PIX_DEPOSITO}                       xpath=//android.view.View[@content-desc="Pix Sem custo e cai na hora, mesmo de madrugada e fim de semana."]
-${BOLETO_DEPOSITO}                    xpath=//android.view.View[@content-desc="Boleto Sem custo e pode levar 3 dias úteis para o dinheiro cair."]
-${TED_DOC_DEPOSITO}                   xpath=//android.view.View[@content-desc="TED/DOC Pode ter custo e cai somente em horário comercial de dias úteis."]
-${TRAZER_SALARIO_DEPOSITO}            xpath=//android.view.View[@content-desc="Trazer seu salário Receba todo mês direto aqui na sua conta, sem custo."]
+${PIX_DEPOSITO}                       xpath=//android.view.View[contains(@content-desc,"Pix")]
+${BOLETO_DEPOSITO}                    xpath=//android.view.View[contains(@content-desc,"Boleto")]
+${TED_DOC_DEPOSITO}                   xpath=//android.view.View[contains(@content-desc,"TED/DOC")]
+${TRAZER_SALARIO_DEPOSITO}            xpath=//android.view.View[contains(@content-desc,"Trazer seu salário")]
 
 # ÁREA EMPRÉSTIMO
-${INFOS_EMPRESTIMO}                   xpath=//android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View[1]/android.widget.Button[2]
+${BTN_INFO_EMPRESTIMO}                xpath=//android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View[1]/android.widget.Button[2]
 ${VALOR_EMPRESTIMO}                   xpath=//android.view.View[@content-desc="O valor disponível no momento é de R$ 10.000,00"]
 ${VALOR_DIARIO_EMPRESTIMO}            xpath=//android.view.View[@content-desc="Este valor pode mudar diariamente devido à nossa análise de crédito."]
 ${BTN_ENTENDA_EMPRESTIMO}             xpath=//android.view.View[@content-desc="Entenda como funciona >"]
@@ -84,8 +85,10 @@ ${BTN_NOVO_EMPRESTIMO}                xpath=//android.widget.Button[@content-des
 ${MENSAGEM_ATIVO_EMPRESTIMO}          xpath=//android.view.View[@content-desc="Você não possui nenhum empréstimo ativo."]
 
 # ÁREA RECARGA
+${INPUT_CEL_RECARGA}                  xpath=//android.widget.EditText
 
 # ÁREA COBRAR
+${INPUT_VALOR_DOAR}                   xpath=//android.widget.EditText[@text="R$ 0,00"]
 
 
 *** Keywords ***
@@ -136,3 +139,89 @@ Quando ele clica no olhinho no canto superior direito
 Então o saldo da conta e a fatura do cartão ficam invisíveis
     Wait Until Page Does Not Contain     ${CAMPO_SALDO}
     Wait Until Page Does Not Contain     ${CAMPO_CARTAO_CREDITO}
+
+Quando ele clica na área de Conta
+    Espera o elemento e clica nele    ${CAMPO_SALDO}
+
+Então ele consegue visualizar o saldo disponível
+    Espera o elemento e verifica conteúdo    ${LABEL_AREA_SALDO}     'Saldo disponível'
+    Espera o elemento e verifica conteúdo    ${SALDO_DISPONIVEL}     'R$ 181,79'
+
+Então ele consegue visualizar o dinheiro guardado
+    Espera o elemento e verifica conteúdo    ${DINHEIRO_GUARDADO_SALDO}     'Dinheiro guardado R$ 240,02'
+    
+Então ele consegue visualizar o rendimento total da conta
+    Espera o elemento e verifica conteúdo    ${RENDIMENTO_CONTA_SALDO}      'Rendimento total da conta +R$ 0,20 este mês'
+
+E clica em Depositar
+    Verifica elemento                 ${BTN_DEPOSITAR_SALDO}
+    Espera o elemento e clica nele    ${BTN_DEPOSITAR_SALDO}
+
+Então ele pode visualizar os meios de depósito
+    Espera o elemento e verifica conteúdo    ${MENSAGEM_DEPOSITO}                  'Como você quer depositar na sua conta do Nubank'
+    Espera o elemento e verifica conteúdo    ${PIX_DEPOSITO}                       'Pix Sem custo e cai na hora, mesmo de madrugada e fim de semana.'
+    Espera o elemento e verifica conteúdo    ${BOLETO_DEPOSITO}                    'Boleto Sem custo e pode levar 3 dias úteis para o dinheiro cair.'
+    Espera o elemento e verifica conteúdo    ${TED_DOC_DEPOSITO}                   'TED/DOC Pode ter custo e cai somente em horário comercial de dias úteis.'
+    Espera o elemento e verifica conteúdo    ${TRAZER_SALARIO_DEPOSITO}            'Trazer seu salário Receba todo mês direto aqui na sua conta, sem custo.'
+
+E clica em Pagar
+    Verifica elemento                 ${BTN_PAGAR_SALDO}
+    Espera o elemento e clica nele    ${BTN_PAGAR_SALDO}
+
+Então ele pode visualizar os meios de pagamento
+    Espera o elemento e verifica conteúdo    ${BTN_PIX_PAGAR}                      "Pagar com Pix Leia um QR Code ou cole o código."
+    Espera o elemento e verifica conteúdo    ${BTN_FATURA_PAGAR}                   "Pagar fatura do cartão Libera o limite do seu Cartão de Crédito."
+    Espera o elemento e verifica conteúdo    ${BTN_BOLETO_PAGAR}                   "Pagar um boleto Contas de luz, água, etc."
+
+E clica em Transferir
+    Verifica elemento                 ${BTN_TRANSFERIR_SALDO}
+    Espera o elemento e clica nele    ${BTN_TRANSFERIR_SALDO}
+
+Então ele pode inputar um valor a ser transferido
+    Espera o elemento e inputa um texto    ${INPUT_VALOR_TRANSFERIR}    '20000'
+
+E clica em Empréstimos
+    Verifica elemento                 ${BTN_EMPRESTIMO_SALDO} 
+    Espera o elemento e clica nele    ${BTN_EMPRESTIMO_SALDO}   
+
+Então ele pode visualizar as informações de empréstimo
+    Verifica elemento                        ${BTN_INFO_EMPRESTIMO} 
+    Espera o elemento e clica nele           ${BTN_INFO_EMPRESTIMO}              
+    Espera o elemento e verifica conteúdo    ${VALOR_EMPRESTIMO}                   "O valor disponível no momento é de R$ 10.000,00"
+    Espera o elemento e verifica conteúdo    ${VALOR_DIARIO_EMPRESTIMO}            "Este valor pode mudar diariamente devido à nossa análise de crédito."
+    Espera o elemento e verifica conteúdo    ${BTN_ENTENDA_EMPRESTIMO}             "Entenda como funciona >"
+    Espera o elemento e verifica conteúdo    ${BTN_NOVO_EMPRESTIMO}                "NOVO EMPRÉSTIMO"
+    Espera o elemento e verifica conteúdo    ${MENSAGEM_ATIVO_EMPRESTIMO}          "Você não possui nenhum empréstimo ativo."
+
+E clica em Cobrar
+    Verifica elemento                 ${BTN_COBRAR_SALDO}  
+    Espera o elemento e clica nele    ${BTN_COBRAR_SALDO} 
+
+Então ele pode inputar um valor a ser cobrado
+    Espera o elemento e inputa um texto    ${INPUT_VALOR_DOAR}    '20000'
+
+Então ele pode visualizar o histórico de transferências
+    Espera o elemento e verifica conteúdo    ${HISTORICO_SALDO}                    xpath=//android.view.View[@content-desc="Histórico"]
+
+E pode visualizar a primeira transferência enviada
+    Espera o elemento e verifica conteúdo    ${TRANSF1_SALDO}    "Transferência enviada Ontem PATRICIA COSTA R$ 30,00 Pix'
+    
+E arrasta a tela para baixo
+    Swipe By Percent    60    50    60    -10    1500
+
+Então ele pode visualizar as transferências recebidas
+    Espera o elemento e verifica conteúdo    ${TRANSF2_SALDO}                      "Transferência recebida Ontem ANDRE JEY R$ 30,00 Pix"
+    Espera o elemento e verifica conteúdo    ${TRANSF3_SALDO}                      "Transferência recebida Ontem ERIKO BARBOSA R$ 30,00 Pix"
+    Espera o elemento e verifica conteúdo    ${TRANSF4_SALDO}                      "Transferência recebida Ontem IVAN COELHO R$ 30,00 Pix"
+
+Quando ele clica na opção de pix
+    Espera o elemento e clica nele    ${BTN_PIX}
+
+Então ele consegue visualizar as funcionalidades pix
+    Espera o elemento e verifica conteúdo                      ${MENSAGEM_PIX}                       "Minha área Pix Tudo o que você precisa para pagar, transferir ou cobrar."
+    Espera o elemento e clica nele                             ${BTN_PAGAR_PIX}
+    Espera o elemento e clica nele                             ${BTN_TRANSFERIR_PIX}                
+    Espera o elemento e clica nele                             ${BTN_COBRAR_PIX}
+    Espera o elemento, verifica o conteúdo e clica nele        ${BTN_CHAVES_PIX}                     "Minhas chaves"         
+    Espera o elemento, verifica o conteúdo e clica nele        ${BTN_LIMITE_PIX}                     "Meu limite Pix"           
+    Espera o elemento, verifica o conteúdo e clica nele        ${BTN_AJUDA_PIX}                      "Me ajuda"                                                   
