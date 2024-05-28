@@ -316,10 +316,10 @@ Então ele pode visualizar as transferências realizadas
     Espera o elemento e verifica conteúdo    ${TRANSF3_FATURA}    'Transferência enviada Ontem BRENO FREITAS R$ 30,00 Pix'
 
 E ele arrasta a tela para baixo
-    Swipe By Percent    60    85    60    -5    1500
+    Swipe By Percent    60    85    60    -5    3000
 
 Quando ele arrasta a tela para baixo
-    Swipe By Percent    0    99    0    40    1500
+    Swipe By Percent    0    99    0    40    1000
 
 E clica no campo de empréstimo
     Espera o elemento e clica nele    ${CAMPO_EMPRESTIMO}
@@ -342,7 +342,8 @@ Então ele pode visualizar as informações do campo de convite de amigos
     Espera o elemento e espera que esteja desabilitado    ${BTN_AMIGOS}
 
 E navega no último carrossel
-    Swipe By Percent    60    90    -40    90    1500
+    Wait Until Page Contains Element    ${CAMPO_WPP}
+    Swipe By Percent    80    90    30    90    1000
 
 Quando ele clica no campo de indicação de amigos
     Espera o elemento e clica nele        ${CAMPO_INDICA_AMIGOS}
