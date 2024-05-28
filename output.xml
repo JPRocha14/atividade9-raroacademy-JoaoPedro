@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.3 on win32)" generated="2024-05-27T23:17:50.847702" rpa="false" schemaversion="5">
+<suite id="s1" name="homePage" source="c:\Users\nanic\OneDrive\Área de Trabalho\QA\atividade9\android\features\homePage.robot">
+<test id="s1-t1" name="CT002 - Deve permitir que o usuário esconda o saldo da conta e a fatura do cartão" line="15">
+<kw name="Abrir App" owner="config" type="SETUP">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>http://127.0.0.1:4723</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<arg>platformName=${ANDROID_PLATFORM_NAME}</arg>
+<arg>platformVersion=${ANDROID_PLATFORM_VERSION}</arg>
+<arg>appActivity=${ANDROID_APP_ACTIVITY}</arg>
+<arg>appPackage=${ANDROID_APP_PACKAGE}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2024-05-27T23:17:51.011766" elapsed="7.134363"/>
+</kw>
+<status status="PASS" start="2024-05-27T23:17:51.011766" elapsed="7.134363"/>
+</kw>
+<kw name="Dado que o cliente está na página inicial" owner="nuPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2024-05-27T23:17:58.875166" level="INFO">xpath criteria: //android.widget.ScrollView</msg>
+<arg>${PAGINA_INICIAL}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2024-05-27T23:17:58.147130" elapsed="0.730037"/>
+</kw>
+<status status="PASS" start="2024-05-27T23:17:58.147130" elapsed="0.730037"/>
+</kw>
+<kw name="Quando ele clica no olhinho no canto superior direito" owner="nuPage">
+<kw name="Espera o elemento e clica nele" owner="commons">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2024-05-27T23:17:58.931088" level="INFO">xpath criteria: //android.widget.ScrollView/android.widget.Button[1]</msg>
+<arg>${elemento}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2024-05-27T23:17:58.878168" elapsed="0.053427"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-05-27T23:17:58.933593" level="INFO">Clicking element 'xpath=//android.widget.ScrollView/android.widget.Button[1]'.</msg>
+<msg time="2024-05-27T23:17:59.011802" level="INFO">xpath criteria: //android.widget.ScrollView/android.widget.Button[1]</msg>
+<arg>${elemento}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-05-27T23:17:58.931595" elapsed="0.081203"/>
+</kw>
+<arg>${EYE_WIDGET}</arg>
+<status status="PASS" start="2024-05-27T23:17:58.878168" elapsed="0.134630"/>
+</kw>
+<status status="PASS" start="2024-05-27T23:17:58.877167" elapsed="0.135631"/>
+</kw>
+<kw name="Então o saldo da conta e a fatura do cartão ficam invisíveis" owner="nuPage">
+<kw name="Wait Until Page Does Not Contain" owner="AppiumLibrary">
+<arg>${CAMPO_SALDO}</arg>
+<doc>Waits until `text` disappears from current page.</doc>
+<status status="PASS" start="2024-05-27T23:17:59.012798" elapsed="0.042593"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain" owner="AppiumLibrary">
+<arg>${CAMPO_CARTAO_CREDITO}</arg>
+<doc>Waits until `text` disappears from current page.</doc>
+<status status="PASS" start="2024-05-27T23:17:59.055391" elapsed="0.727871"/>
+</kw>
+<status status="PASS" start="2024-05-27T23:17:59.012798" elapsed="0.770464"/>
+</kw>
+<kw name="Teardown" owner="config" type="TEARDOWN">
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-05-27T23:17:59.784214" elapsed="0.000000"/>
+</kw>
+<kw name="Close All Applications" owner="AppiumLibrary">
+<doc>Closes all open applications.</doc>
+<status status="PASS" start="2024-05-27T23:17:59.785214" elapsed="0.189906"/>
+</kw>
+<status status="PASS" start="2024-05-27T23:17:59.784214" elapsed="0.190906"/>
+</kw>
+<status status="PASS" start="2024-05-27T23:17:51.010765" elapsed="8.964355"/>
+</test>
+<status status="PASS" start="2024-05-27T23:17:50.852215" elapsed="9.123905"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="homePage">homePage</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
