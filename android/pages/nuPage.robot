@@ -405,6 +405,9 @@ E ele arrasta a tela para baixo
     Wait Until Page Contains Element    ${TEXT_EMPRESTIMO}
     Swipe By Percent    60    85    60    -10    3000
 
+E ele arrasta a tela para baixo para visualizar as outras funcionalidades
+    Wait Until Page Contains Element    ${LIMITE_FATURA}
+    Swipe By Percent    60    85    60    -10    3000
 Quando ele arrasta a tela para baixo
     Swipe By Percent    0    99    0    40    1000
 

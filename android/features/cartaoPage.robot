@@ -44,5 +44,5 @@ CT007 - Deve permitir que o usuário visualize a funcionalidade de cartão virtu
 CT008 - Deve permitir que o usuário visualize as transações realizadas
     Dado que o cliente está na página inicial
     Quando ele clica na área de cartão de crédito
-    E ele arrasta a tela para baixo
+    E ele arrasta a tela para baixo para visualizar as outras funcionalidades
     Então ele pode visualizar as transferências realizadas
