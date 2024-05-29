@@ -14,23 +14,14 @@ ${BTN_INVITE_FRIENDS}           xpath=//android.widget.ScrollView/android.widget
 ${BTN_INFOS}                    xpath=//android.widget.ScrollView/android.widget.Button[2]
 ${CAMPO_SALDO}                  xpath=//android.view.View[contains(@content-desc,"Conta")]    
 ${BTN_PIX}                      xpath=//android.widget.ScrollView/android.widget.HorizontalScrollView[1]/android.widget.Button[1]
-${TEXT_PIX}                     xpath=//android.view.View[@content-desc="Pix"]
 ${BTN_PAGAR}                    xpath=//android.widget.ScrollView/android.widget.HorizontalScrollView[1]/android.widget.Button[2]
-${TEXT_PAGAR}                   xpath=//android.view.View[@content-desc="Pagar"]
 ${BTN_TRANSFERIR}               xpath=//android.widget.ScrollView/android.widget.HorizontalScrollView[1]/android.widget.Button[3]
-${TEXT_TRANSFERIR}              xpath=//android.view.View[@content-desc="Transferir"]
 ${BTN_DEPOSITAR}                xpath=//android.widget.ScrollView/android.widget.HorizontalScrollView[1]/android.widget.Button[4]
-${TEXT_DEPOSITAR}               xpath=//android.view.View[@content-desc="Depositar"]
 ${BTN_EMPRESTIMO}               xpath=//android.widget.ScrollView/android.widget.HorizontalScrollView[1]/android.widget.Button[5]
-${TEXT_EMPRESTIMO}              xpath=//android.view.View[@content-desc="Empréstimos"]
 ${BTN_RECARGA}                  xpath=//android.widget.ScrollView/android.widget.HorizontalScrollView[1]/android.widget.Button[4]
-${TEXT_RECARGA}                 xpath=//android.view.View[@content-desc="Recarga de celular"]
 ${BTN_COBRAR}                   xpath=//android.widget.ScrollView/android.widget.HorizontalScrollView[1]/android.widget.Button[5]
-${TEXT_COBRAR}                  xpath=//android.view.View[@content-desc="Cobrar"]
 ${BTN_DOAR}                     xpath=//android.widget.ScrollView/android.widget.HorizontalScrollView[1]/android.widget.Button[4]
-${TEXT_DOAR}                    xpath=//android.view.View[@content-desc="Doação"]
 ${BTN_ATALHOS}                  xpath=//android.widget.ScrollView/android.widget.HorizontalScrollView[1]/android.widget.Button[5]
-${TEXT_ATALHOS}                 xpath=//android.view.View[@content-desc="Doação"]
 ${BTN_MEUS_CARTOES}             xpath=//android.view.View[@content-desc="Meus cartões"]
 ${TEXT_EMPRESTIMO}              xpath=//android.view.View[contains(@content-desc,"Você tem R$ 10.000,00 disponíveis para empréstimo.")]
 ${TEXT_PLANOS}                  xpath=//android.view.View[contains(@content-desc,"Conquiste planos futuros")]
@@ -243,7 +234,8 @@ Então ele pode visualizar o botão roxo Quero conhecer
     Espera o elemento e verifica conteúdo        ${BTN_QUERO_CONHECER_WPP}                     'Quero conhecer'
     Espera o elemento e espera que ele esteja habilitado    ${BTN_QUERO_CONHECER_WPP}
 
-E navega pelo último carrossel
+E navega pelo último carrossel    
+    Wait Until Page Contains Element    ${BTN_QUERO_CONHECER_WPP}
     Swipe By Percent    60    90    -40    90    1500
 
 Então ele pode visualizar o campo Indique seus amigos
@@ -395,6 +387,7 @@ Então ele pode visualizar a funcionalidade de pagar fatura
     Espera o elemento e verifica conteúdo    ${FEAT_PAGAR_FATURA}    'Pagar fatura'
 
 Então ele pode visualizar a funcionalidade de resumo de faturas
+    Wait Until Page Contains Element         ${FEAT_RESUMO_FATURA}
     Espera o elemento e verifica conteúdo    ${FEAT_RESUMO_FATURA}    'Resumo de faturas'
 
 Então ele pode visualizar a funcionalidade de ajustar limites
@@ -409,7 +402,7 @@ Então ele pode visualizar as transferências realizadas
     Espera o elemento e verifica conteúdo    ${TRANSF3_FATURA}    'Transferência enviada Ontem BRENO FREITAS R$ 30,00 Pix'
 
 E ele arrasta a tela para baixo
-    Wait Until Page Contains Element    ${VALOR_FATURA}
+    Wait Until Page Contains Element    ${TEXT_EMPRESTIMO}
     Swipe By Percent    60    85    60    -10    3000
 
 Quando ele arrasta a tela para baixo
